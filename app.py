@@ -41,19 +41,13 @@ def signup():
 
         new_user = User(first_name=first_name, last_name=last_name, email=email, password=password, subject=subject.upper(), is_student=0)
 
-        try:
-            db.session.add(new_user)
-            db.session.commit()
-            return redirect("/tutor-signup")
-        except:
-            return "Error registering user."
+        db.session.add(new_user)
+        db.session.commit()
+        return redirect("/signup")
         
     else:
         return render_template("signup.html")
-    
-@app.route('/signup', methods=["POST", "GET"])
-def signup():
-    return render_template("signup.html")
+
 @app.route('/signin', methods=["POST", "GET"])
 def signin():
     return render_template("signin.html")
