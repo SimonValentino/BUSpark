@@ -51,6 +51,8 @@ def signup():
 @app.route('/signin', methods=["POST", "GET"])
 def signin():
     return render_template("signin.html")
-
+@app.route('/student-portal', methods=["POST", "GET"])
+def student_portal():
+    return render_template("student-portal.html")
 if __name__ == "__main__":
     app.run(debug=True)

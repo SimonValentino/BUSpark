@@ -1,0 +1,115 @@
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1000;
+  transition: background-color 1s ease;
+}
+.body {
+  color: #26235d;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 15px;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.scrolled {
+  background-color: #343573;
+  color: black;
+}
+
+.background {
+  background-color: #181047;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  padding: 200px 0px 600px;
+}
+
+.title {
+  padding-top: 150px;
+  font-size: 60px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.description {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #37abe4;
+  border-radius: 30px;
+  transition: 1s;
+}
+
+.feature-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.tutor-display-container {
+  background-color: #343573;
+  border-radius: 25px;
+  border-style: solid;
+  width: 850px;
+  margin-top: 50px;
+  margin-left: 350px;
+}
+.section-title,
+.tutor-name {
+  color: white;
+  padding-left: 10px;
+  font-size: 35px;
+  border-color: white;
+}
+.section-title {
+  padding-bottom: 30px;
+  padding-left: 100px;
+}
+.tutor-introduction {
+  font-size: 20px;
+  color: white;
+  text-align: left;
+  padding-left: 10px;
+  padding-bottom: 15px;
+}
