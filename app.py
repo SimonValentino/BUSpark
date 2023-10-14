@@ -18,7 +18,7 @@ class User(db.Model):
         return f"<User {self.first_name} {self.last_name}"
 
 
-@app.route('/')
+@app.route('/', methods=["POST", "GET"])
 def index():
     return render_template("index.html")
 
