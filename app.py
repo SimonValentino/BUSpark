@@ -7,7 +7,7 @@ db = SQLAlchemy(app)
 
 
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(200), nullable=False, unique=True)
@@ -23,8 +23,13 @@ class User(db.Model):
 def index():
     return render_template("index.html")
     
-@app.route('/tutor-signup', methods=["POST", "GET"])
-def tutor_signup():
+# >>> from app import db, User
+# >>> db.create_all()
+# >>> user = User(first_name="gabe", last_name="gabe", email="gabe@gabe.gabe", password="gabe123", subject="GABE", is_student=1)
+#                                                               >>> db.session.add(user)
+# >>> db.session.commit()
+@app.route('/signup', methods=["POST", "GET"])
+def signup():
     if request.method == "POST":
         first_name = request.form["first_name"]
         last_name = request.form["last_name"]
@@ -34,21 +39,14 @@ def tutor_signup():
         
         print(first_name, last_name, email, password, subject)
 
-        new_user = User(first_name=first_name, last_name=last_name, email=email, password=password, subject=subject)
+        new_user = User(first_name=first_name, last_name=last_name, email=email, password=password, subject=subject.upper(), is_student=0)
 
-        try:
-            db.session.add(new_user)
-            db.session.commit()
-            return redirect("/tutor-signup")
-        except:
-            return "Error registering user."
+        db.session.add(new_user)
+        db.session.commit()
+        return redirect("/signup")
         
     else:
-        return render_template("index.html")
-    
-@app.route('/signup', methods=["POST", "GET"])
-def signup():
-    return render_template("signup.html")
+        return render_template("signup.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
