@@ -23,8 +23,8 @@ class User(db.Model):
 def index():
     return render_template("index.html")
     
-@app.route('/tutor-signup', methods=["POST", "GET"])
-def tutor_signup():
+@app.route('/signup', methods=["POST", "GET"])
+def signup():
     if request.method == "POST":
         first_name = request.form["first_name"]
         last_name = request.form["last_name"]
@@ -39,18 +39,16 @@ def tutor_signup():
         try:
             db.session.add(new_user)
             db.session.commit()
-            return redirect("/tutor-signup")
+            return redirect("/signup")
         except:
             return "Error registering user."
         
     else:
-        return render_template("index.html")
+        return render_template("signup.html")
     
-@app.route('/signup', methods=["POST", "GET"])
-def signup():
-    return render_template("signup.html")
+
 @app.route('/signin', methods=["POST", "GET"])
-def tutor_signin():
+def signin():
     return render_template("signin.html")
 if __name__ == "__main__":
     app.run(debug=True)
