@@ -46,7 +46,11 @@ def signup():
         return redirect("/signup")
         
     else:
-        return render_template("signup.html")
+        return render_template("index.html")
+    
+@app.route('/signin', methods=["POST", "GET"])
+def signin():
+    return render_template("signin.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
