@@ -59,10 +59,11 @@ def signup():
 
 @app.route('/signin', methods=["POST", "GET"])
 def signin():
-    return render_template("signin.html")@app.route('/submit_review', methods=["POST"])
+    return render_template("signin.html")
 @app.route('/student-portal', methods=["POST", "GET"])
 def student_portal():
     return render_template("student-portal.html")
+@app.route('/submit_review', methods=["POST"])
 def submit_review():
     if request.method == "POST":
         first_name = request.form["first_name"]
