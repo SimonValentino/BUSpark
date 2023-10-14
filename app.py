@@ -47,7 +47,7 @@ def tutor_signup():
         return render_template("index.html")
     
 @app.route('/signup', methods=["POST", "GET"])
-def tutor_signup():
+def signup():
     return render_template("signup.html")
 
 if __name__ == "__main__":
