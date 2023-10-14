@@ -170,12 +170,14 @@ p {
 
 #contact-section p {
   margin-bottom: 20px;
+  font-size: 16px;
   color: black;
 }
 
 #contact-section form label {
   display: block;
   margin-bottom: 5px;
+  font-size: 16px;
   color: black;
 }
 
