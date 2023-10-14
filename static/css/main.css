@@ -35,6 +35,10 @@ p {
   font-size: 18px;
 }
 
+.navbar img {
+  margin-right: 670px;
+}
+
 .scrolled {
   background-color: #343573;
   color: black;
