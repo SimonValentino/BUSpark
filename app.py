@@ -37,8 +37,7 @@ def index():
             return "Error registering user."
 
     else:
-        tasks = User.query.order_by(User.id).all()
-        return render_template("index.html", tasks=tasks)
+        return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
