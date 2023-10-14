@@ -32,11 +32,13 @@ def index():
         try:
             db.session.add(new_user)
             db.session.commit()
-            return "User registered successfully!"
+            return redirect("/")
         except:
             return "Error registering user."
 
-    return render_template("index.html")
+    else:
+        tasks = User.query.order_by(User.date_created).all()
+        return render_template("index.html", tasks=tasks)
 
 if __name__ == "__main__":
     app.run(debug=True)
