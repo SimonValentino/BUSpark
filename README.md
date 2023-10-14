@@ -1,1 +1,1 @@
-Hackathon project by Simon Vaqlentino, Marrio Jeyakumar, Akhil Divi
+Hackathon project by Simon Valentino, Marrio Jeyakumar, Akhil Divi
