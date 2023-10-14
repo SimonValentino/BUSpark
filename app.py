@@ -38,8 +38,8 @@ def index():
 
     else:
         return render_template("index.html")
-@app.route('/tutor-signup', methods=["POST", "GET"])
+@app.route('/signup', methods=["POST", "GET"])
 def tutor_signup():
-    return render_template("tutor-signup.html")
+    return render_template("signup.html")
 if __name__ == "__main__":
     app.run(debug=True)
