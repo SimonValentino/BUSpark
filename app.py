@@ -41,5 +41,8 @@ def index():
 @app.route('/signup', methods=["POST", "GET"])
 def tutor_signup():
     return render_template("signup.html")
+@app.route('/signin', methods=["POST", "GET"])
+def tutor_signin():
+    return render_template("signin.html")
 if __name__ == "__main__":
     app.run(debug=True)
