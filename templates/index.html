@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='review.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="static\css\main.css" />
     <title>Sparked!</title>
@@ -23,6 +24,7 @@
   <body>
     <nav class="navbar">
       <ul>
+        <li><img width=10% src="{{ url_for('static', filename='favicon.png') }}" alt="logo-image"></li>
         <li><a href="http://localhost:5000/student-portal">Home</a></li>
         <li><a href="http://localhost:5000/signup">Sign Up</a></li>
         <li><a href="http://localhost:5000/signin">Sign in</a></li>
@@ -48,7 +50,7 @@
             The SparkED! project aims to solve the problem of low-income
             students who are struggling with school but can't afford a tutor
             along with providing an initiative for service hours for high
-            schoolers. Sparked! connects high school and college students who
+            schoolers. SparkED! connects high school and college students who
             want to tutor students through an online portal.
           </p>
         </div>
@@ -64,9 +66,9 @@
           </p>
         </div>
         <div class="feature">
-          <h2 class="feature-title">Explore Careers</h2>
+          <h2 class="feature-title">Gain Service Hours</h2>
           <p class="feature-description">
-            Discover a world of opportunities with career exploration.
+            Students will gain service hours for volunteering as tutors.
           </p>
         </div>
         <div class="feature">
@@ -79,22 +81,23 @@
     </div>
 
     <div id="contact-section">
-      <h2>Contact Us</h2>
-      <p>Please fill out the form below to get in touch with us.</p>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
-        
-        <input type="submit" value="Submit" class="btn btn-primary">
-      </form>
-    </div>
+  <h2>Leave a Review!</h2>
+  <p> Please fill out the form below to leave a review for a tutor.</p>
+  <form method="POST" action="/submit_review">
+    <label for="first_name">Tutor First Name:</label>
+    <input type="text" id="first_name" name="first_name" required><br><br>
     
-    </div>
+    <label for="last_name">Tutor Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required><br><br>
+    
+    <label for="email">Tutor Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    
+    <label for="review">Review:</label>
+    <textarea id="review" name="review" rows="4" cols="50" required></textarea><br><br>
+    
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+</div>
   </body>
 </html>
