@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -18,8 +18,23 @@ class User(db.Model):
         return f"<User {self.first_name} {self.last_name}"
 
 
-@app.route('/', methods=["POST", "GET"])
+@app.route('/', methods=["ID", "FIRSTNAME", "LASTNAME", "EMAIL", "SUBJECT"])
 def index():
+    if request.method == "ID":
+        pass
+    
+    elif request.method == "FIRSTNAME":
+        pass
+    
+    elif request.method == "LASTNAME":
+        pass
+    
+    elif request.method == "EMAIL":
+        pass
+    
+    elif request.method == "SUBJECT":
+        pass
+    
     return render_template("index.html")
 
 if __name__ == "__main__":
