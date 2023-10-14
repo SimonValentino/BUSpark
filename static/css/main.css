@@ -154,3 +154,53 @@ p {
   padding: 20px;
   margin: 0 auto;
 }
+#contact-section {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+#contact-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#contact-section p {
+  margin-bottom: 20px;
+}
+
+#contact-section form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#contact-section form input,
+#contact-section form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#contact-section form textarea {
+  resize: vertical;
+}
+
+#contact-section form input[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+#contact-section form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
