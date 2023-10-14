@@ -18,23 +18,24 @@ class User(db.Model):
         return f"<User {self.first_name} {self.last_name}"
 
 
-@app.route('/', methods=["ID", "FIRSTNAME", "LASTNAME", "EMAIL", "SUBJECT"])
+@app.route('/', methods=["POST", "GET"])
 def index():
-    if request.method == "ID":
-        pass
-    
-    elif request.method == "FIRSTNAME":
-        pass
-    
-    elif request.method == "LASTNAME":
-        pass
-    
-    elif request.method == "EMAIL":
-        pass
-    
-    elif request.method == "SUBJECT":
-        pass
-    
+    if request.method == "POST":
+        first_name = request.form["first_name"]
+        last_name = request.form["last_name"]
+        email = request.form["email"]
+        password = request.form["password"]
+        subject = request.form["subject"]
+
+        new_user = User(first_name=first_name, last_name=last_name, email=email, password=password, subject=subject)
+
+        try:
+            db.session.add(new_user)
+            db.session.commit()
+            return "User registered successfully!"
+        except:
+            return "Error registering user."
+
     return render_template("index.html")
 
 if __name__ == "__main__":
