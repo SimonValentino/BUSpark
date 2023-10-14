@@ -1,0 +1,156 @@
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  color: #f9fafb;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1000;
+  transition: background-color 1s ease;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 15px;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.scrolled {
+  background-color: #343573;
+  color: black;
+}
+
+.background {
+  /* background-image: url("https://colorlib.com/etc/lf/Login_v5/images/bg-01.jpg"); */
+  background-color: #181047;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  padding: 200px 0px 600px;
+}
+
+.title {
+  padding-top: 150px;
+  font-size: 60px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.mission_title {
+  padding-top: 100px;
+  font-size: 60px;
+  margin-bottom: 20px;
+  color: #343573;
+  text-align: center;
+}
+
+.description {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.mission_description {
+  color: #343573;
+  font-size: 24px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #37abe4;
+  border-radius: 30px;
+  transition: 1s;
+}
+
+.features {
+  background-color: #343573;
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.feature {
+  text-align: center;
+  padding: 20px;
+}
+
+.feature-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.feature-description {
+  font-size: 16px;
+}
+
+.container-parent {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 0;
+  background-color: #343573;
+  padding: 0;
+  margin: 0;
+}
+
+.container-rect {
+  width: 100%;
+  height: 100%;
+  background-color: #26255e;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.container-center {
+  width: 80%;
+  background-color: white;
+  z-index: 1;
+  position: relative;
+  padding: 20px;
+  margin: 0 auto;
+}

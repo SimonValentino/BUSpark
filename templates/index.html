@@ -1,9 +1,72 @@
-{% extends 'base.html' %}
-
-{% block head %}
-<h1>Template</h1>
-{% endblock %}
-
-{% block body %}
-
+{% extends 'base.html' %} {% block head %}
+<link rel="stylesheet" href="static\css\main.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EmpowerED Hub</title>
+<script>
+  window.addEventListener("scroll", function () {
+    var navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+{% endblock %} {% block body %}
+<nav class="navbar">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<div class="background">
+  <div class="container">
+    <h1 class="title">Welcome to EmpowerED Hub</h1>
+    <p class="description">Empowering Students for a Bright Future</p>
+    <a href="{% url 'register' %}" class="btn btn-primary">Get Started</a>
+  </div>
+</div>
+<div class="mission">
+  <div class="container-parent">
+    <div class="container-rect"></div>
+    <div class="container-center">
+      <h1 class="mission_title">Mission</h1>
+      <p class="mission_description">
+        The EmpowerED Hub project addresses the challenges faced by low-income
+        students in educational settings. By providing personalized learning
+        experiences, mentorship, and exposure to diverse career paths, the
+        project aims to empower these students with confidence and direction.
+        Through this comprehensive approach, EmpowerED Hub strives to create an
+        inclusive and equitable educational environment that breaks down
+        barriers and unlocks the potential of every individual, fostering
+        academic success and brighter futures.
+      </p>
+    </div>
+    <div class="container-rect"></div>
+  </div>
+</div>
+<div class="features">
+  <div class="container">
+    <div class="feature">
+      <h2 class="feature-title">Personalized Learning</h2>
+      <p class="feature-description">
+        Tailored educational experiences for every student.
+      </p>
+    </div>
+    <div class="feature">
+      <h2 class="feature-title">Explore Careers</h2>
+      <p class="feature-description">
+        Discover a world of opportunities with career exploration.
+      </p>
+    </div>
+    <div class="feature">
+      <h2 class="feature-title">Connect and Collaborate</h2>
+      <p class="feature-description">
+        Connect with peers and educators for meaningful collaboration.
+      </p>
+    </div>
+  </div>
+</div>
 {% endblock %}
