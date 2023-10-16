@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='review.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="stylesheet" href="static\css\main.css" />
+    <link rel="stylesheet" href="{% static "css/review.css" %}">
+    <link rel="shortcut icon" href="{% static "images/favicon.ico" %}">
+    <link rel="stylesheet" href="{% static "css/main.css" %}" />
     <title>Sparked!</title>
     <script>
       function scrollToContact() {
@@ -24,10 +25,10 @@
   <body>
     <nav class="navbar">
       <ul>
-        <li><img width=10% src="{{ url_for('static', filename='favicon.png') }}" alt="logo-image"></li>
-        <li><a href="http://localhost:5000/student-portal">Home</a></li>
-        <li><a href="http://localhost:5000/signup">Sign Up</a></li>
-        <li><a href="http://localhost:5000/signin">Sign in</a></li>
+        <li><img width=10% src="{% static "images/favicon.jpg" %}" alt="logo-image"></li>
+        <li><a href="{% url "student-portal" %}">Student Portal</a></li>
+        <li><a href="{% url "signup" %}">Sign Up</a></li>
+        <li><a href="{% url "signin" %}">Sign in</a></li>
           <a href="javascript:void(0);" onclick="scrollToContact()">Contact</a>
         </li>
       </ul>
@@ -36,7 +37,7 @@
       <div class="container">
         <h1 class="title">Welcome to Sparked!</h1>
         <p class="description">Empowering Students for a Bright Future</p>
-        <a href="http://localhost:5000/signup" class="btn btn-primary"
+        <a href="{% url "signup" %}" class="btn btn-primary"
           >Get Started</a
         >
       </div>
@@ -83,7 +84,7 @@
     <div id="contact-section">
   <h2>Leave a Review!</h2>
   <p> Please fill out the form below to leave a review for a tutor.</p>
-  <form method="POST" action="/submit_review">
+  <form method="POST" action="#">
     <label for="first_name">Tutor First Name:</label>
     <input type="text" id="first_name" name="first_name" required><br><br>
     

@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" type="image/x-icon" href="images/favicon.jpg" />
-    <link rel="stylesheet" href="static/css/student-portal.css" />
-    <title>EmpowerED Hub - Portal</title>
+    <link rel="icon" type="image/x-icon" href="{% static "images/favicon.jpg" %}" />
+    <link rel="stylesheet" href="{% static "css/student-portal.css" %}" />
+    <title>SparkED Hub Portal</title>
     <script>
       function scrollToContact() {
         const contactSection = document.getElementById("contact-section");
@@ -23,13 +24,13 @@
   <body>
     <nav class="navbar">
       <ul>
-        <li><a href="http://localhost:5000/student-portal">Home</a></li>
+        <li><a href="{% url "index" %}">Home</a></li>
         </li>
       </ul>
     </nav>
     <div class="background">
       <div class="container">
-        <h1 class="title">Welcome to the Tutor Portal</h1>
+        <h1 class="title">Welcome to the Student Portal</h1>
         <p class="description">Browse available tutors below</p>
       </div>
     </div>
