@@ -1,104 +1,94 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="{% static "css/review.css" %}">
-    <link rel="stylesheet" href="{% static "css/main.css" %}" />
-    <link rel="shortcut icon" href="{% static "images/favicon.ico" %}">
-    <title>SparkED</title>
-    <script>
-      function scrollToContact() {
-        const contactSection = document.getElementById("contact-section");
-        contactSection.scrollIntoView({ behavior: "smooth" });
-      }
+{% extends "core/base.html" %} {% load static %}
+{% block title%} SparkED {%endblock title %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/review.css' %}" />
+<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+{% endblock head %} {% block body %}
+<nav class="navbar">
+  <ul>
+    <li>
+      <img
+        width="10%"
+        src="{% static 'images/favicon.png' %}"
+        alt="logo-image"
+      />
+    </li>
+    <li><a href="{% url 'student-portal' %}">Student Portal</a></li>
+    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+    <li><a href="{% url 'signin' %}">Sign in</a></li>
+    <li>
+      <a href="javascript:void(0);" onclick="scrollToContact()">Contact</a>
+    </li>
+  </ul>
+</nav>
 
-      window.addEventListener("scroll", function () {
-        var navbar = document.querySelector(".navbar");
-        if (window.scrollY > 50) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
-      });
-    </script>
-  </head>
-  <body>
-    <nav class="navbar">
-      <ul>
-        <li><img width=10% src="{% static "images/favicon.png" %}" alt="logo-image"></li>
-        <li><a href="{% url "student-portal" %}">Student Portal</a></li>
-        <li><a href="{% url "signup" %}">Sign Up</a></li>
-        <li><a href="{% url "signin" %}">Sign in</a></li>
-          <a href="javascript:void(0);" onclick="scrollToContact()">Contact</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="background">
-      <div class="container">
-        <h1 class="title">Welcome to SparkED!</h1>
-        <p class="description">Empowering Students for a Bright Future</p>
-        <a href="{% url "signup" %}" class="btn btn-primary"
-          >Get Started</a
-        >
-      </div>
-    </div>
-    <div class="mission">
-      <div class="container-parent">
-        <div class="container-rect"></div>
-        <div class="container-center">
-          <h1 class="mission_title">Mission</h1>
-          <p class="mission_description">
-            The SparkED project aims to solve the problem of low-income
-            students who are struggling with school but can't afford a tutor
-            along with providing an initiative for service hours for high
-            schoolers. SparkED connects high school and college students who
-            want to tutor students through an online portal.
-          </p>
-        </div>
-        <div class="container-rect"></div>
-      </div>
-    </div>
-    <div class="features">
-      <div class="container">
-        <div class="feature">
-          <h2 class="feature-title">Personalized Learning</h2>
-          <p class="feature-description">
-            Tailored educational experiences for every student.
-          </p>
-        </div>
-        <div class="feature">
-          <h2 class="feature-title">Gain Service Hours</h2>
-          <p class="feature-description">
-            Students will gain service hours for volunteering as tutors.
-          </p>
-        </div>
-        <div class="feature">
-          <h2 class="feature-title">Connect and Collaborate</h2>
-          <p class="feature-description">
-            Connect with peers and educators for meaningful collaboration.
-          </p>
-        </div>
-      </div>
-    </div>
+<div class="background">
+  <div class="container">
+    <h1 class="title">Welcome to SparkED!</h1>
+    <p class="description">Empowering Students for a Bright Future</p>
+    <a href="{% url 'signup' %}" class="btn btn-primary">Get Started</a>
+  </div>
+</div>
 
-    <div id="contact-section">
+<div class="mission">
+  <div class="container-parent">
+    <div class="container-rect"></div>
+    <div class="container-center">
+      <h1 class="mission_title">Mission</h1>
+      <p class="mission_description">
+        The SparkED project aims to solve the problem of low-income students who
+        are struggling with school but can't afford a tutor along with providing
+        an initiative for service hours for high schoolers. SparkED connects
+        high school and college students who want to tutor students through an
+        online portal.
+      </p>
+    </div>
+    <div class="container-rect"></div>
+  </div>
+</div>
+
+<div class="features">
+  <div class="container">
+    <div class="feature">
+      <h2 class="feature-title">Personalized Learning</h2>
+      <p class="feature-description">
+        Tailored educational experiences for every student.
+      </p>
+    </div>
+    <div class="feature">
+      <h2 class="feature-title">Gain Service Hours</h2>
+      <p class="feature-description">
+        Students will gain service hours for volunteering as tutors.
+      </p>
+    </div>
+    <div class="feature">
+      <h2 class="feature-title">Connect and Collaborate</h2>
+      <p class="feature-description">
+        Connect with peers and educators for meaningful collaboration.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="contact-section">
   <h2>Leave a Review!</h2>
-  <p> Please fill out the form below to leave a review for a tutor.</p>
+  <p>Please fill out the form below to leave a review for a tutor.</p>
   <form method="POST" action="#">
     <label for="first_name">Tutor First Name:</label>
-    <input type="text" id="first_name" name="first_name" required><br><br>
-    
+    <input type="text" id="first_name" name="first_name" required /><br /><br />
+
     <label for="last_name">Tutor Last Name:</label>
-    <input type="text" id="last_name" name="last_name" required><br><br>
-    
+    <input type="text" id="last_name" name="last_name" required /><br /><br />
+
     <label for="email">Tutor Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
-    
+    <input type="email" id="email" name="email" required /><br /><br />
+
     <label for="review">Review:</label>
-    <textarea id="review" name="review" rows="4" cols="50" required></textarea><br><br>
-    
-    <input type="submit" value="Submit" class="btn btn-primary">
+    <textarea id="review" name="review" rows="4" cols="50" required></textarea
+    ><br /><br />
+
+    <input type="submit" value="Submit" class="btn btn-primary" />
   </form>
 </div>
-  </body>
-</html>
+{% endblock body %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      function scrollToContact() {
+        const contactSection = document.getElementById("contact-section");
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+
+      window.addEventListener("scroll", function () {
+        var navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+    </script>
+
+    <title>{% block title %}{% endblock title %}</title>
+
+    {% block head %}{% endblock head %}
+  </head>
+  <body>
+    {% block body %}{% endblock body %}
+  </body>
+</html>

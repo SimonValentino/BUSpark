@@ -1,56 +1,44 @@
+{% extends "core/base.html" %} 
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="icon" type="image/x-icon" href="{% static "images/favicon.jpg" %}" />
-    <link rel="stylesheet" href="{% static "css/student-portal.css" %}" />
-    <title>SparkED Hub Portal</title>
-    <script>
-      function scrollToContact() {
-        const contactSection = document.getElementById("contact-section");
-        contactSection.scrollIntoView({ behavior: "smooth" });
-      }
-
-      window.addEventListener("scroll", function () {
-        var navbar = document.querySelector(".navbar");
-        if (window.scrollY > 50) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
-      });
-    </script>
-  </head>
-  <body>
-    <nav class="navbar">
-      <ul>
-        <li><a href="{% url "index" %}">Home</a></li>
-        </li>
-      </ul>
-    </nav>
-    <div class="background">
-      <div class="container">
-        <h1 class="title">Welcome to the Student Portal</h1>
-        <p class="description">Browse available tutors below</p>
-      </div>
-    </div>
-    <div class="tutor-display-container">
-      <div class="tutor-card">
-        <h3 class="tutor-name">John Doe, Mathematics</h3>
-        <p class="tutor-introduction">Hey, I'm a Senior at Boston Latin and my favorite sport is basketball</p>
-      </div>
-    </div>
-    <div class="tutor-display-container">
-      <div class="tutor-card">
-        <h3 class="tutor-name">Bob John, Chemistry</h3>
-        <p class="tutor-introduction">I am a sophomore at Auburn High and my favorite artist is Drake</p>
-      </div>
-    </div>
-    <div class="tutor-display-container">
-      <div class="tutor-card">
-        <h3 class="tutor-name">Sarah Snow, Computer Science</h3>
-        <p class="tutor-introduction">Hey, I'm a Freshman at Shrewsbury High, I can't wait to meet all of you!</p>
-      </div>
-    </div>
-  </body>
-</html>
+{% block title %}StudentPortal{% endblock title %}
+{% block head %}
+<link rel="icon" type="image/x-icon" href="{% static 'images/favicon.jpg' %}" />
+<link rel="stylesheet" href="{% static 'css/student-portal.css' %}" />
+{% endblock head %} {% block body %}
+<nav class="navbar">
+  <ul>
+    <li><a href="{% url 'index' %}">Home</a></li>
+  </ul>
+</nav>
+<div class="background">
+  <div class="container">
+    <h1 class="title">Welcome to the Student Portal</h1>
+    <p class="description">Browse available tutors below</p>
+  </div>
+</div>
+<div class="tutor-display-container">
+  <div class="tutor-card">
+    <h3 class="tutor-name">John Doe, Mathematics</h3>
+    <p class="tutor-introduction">
+      Hey, I'm a Senior at Boston Latin, and my favorite sport is basketball
+    </p>
+  </div>
+</div>
+<div class="tutor-display-container">
+  <div class="tutor-card">
+    <h3 class="tutor-name">Bob John, Chemistry</h3>
+    <p class="tutor-introduction">
+      I am a sophomore at Auburn High, and my favorite artist is Drake
+    </p>
+  </div>
+</div>
+<div class="tutor-display-container">
+  <div class="tutor-card">
+    <h3 class="tutor-name">Sarah Snow, Computer Science</h3>
+    <p class="tutor-introduction">
+      Hey, I'm a Freshman at Shrewsbury High, and I can't wait to meet all of
+      you!
+    </p>
+  </div>
+</div>
+{% endblock body %}
