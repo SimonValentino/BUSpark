@@ -6,11 +6,11 @@ def index(request):
 
 
 def signin(request):
-    return render(request, "core/signin.html")
+    return render(request, "registration/signin.html")
 
 
 def signup(request):
-    return render(request, "core/signup.html")
+    return render(request, "registration/signup.html")
 
 
 def student_portal(request):
