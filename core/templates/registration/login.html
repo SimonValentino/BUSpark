@@ -4,12 +4,13 @@
 {% block title %}Sign In{% endblock title %}
 {% block head %}
 <link rel="shortcut icon" href="{% static "images/favicon.ico" %}" />
-<link rel="stylesheet" href="{% static "css/signup.css" %}" />
-<link rel="html" href="signup.html" />
+<link rel="stylesheet" href="{% static "css/registration.css" %}" />
 {% endblock head %}
 {% block body %}
 <form method="post">
   {% csrf_token %}
   {{ form|crispy }}
+  <button type="submit" class="btn btn-success">Login</button>
+  <p>Don't have an account? Sign up <a href="{% url "sign-up" %}">here</a>!</p>
 </form>
 {% endblock body %}

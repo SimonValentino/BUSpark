@@ -25,14 +25,16 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 select {
-  width: 100%;
+  width: 80%;
   padding: 10px;
   margin-bottom: 10px;
+  padding: auto;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 .btn {
+  margin-top: 10px;
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -40,13 +42,6 @@ select {
   text-decoration: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #6732cb;
+  border-color: rgb(100, 55, 185);
 }

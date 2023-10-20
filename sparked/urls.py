@@ -17,13 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from core.views import index, signin, signup, student_portal
+from core.views import index, sign_up, student_portal
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("django.contrib.auth.urls")),
     path("", index, name="index"),
-    path("signin/", signin, name="signin"),
-    path("signup/", signup, name="signup"),
+    path("sign-up/", sign_up, name="sign-up"),
     path("student-portal/", student_portal, name="student-portal"),
 ]
