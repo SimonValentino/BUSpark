@@ -1,6 +1,5 @@
-{% extends "core/base.html" %} {% load static %}
-{% block title%} SparkED {%endblock title %}
-{% block head %}
+{% extends "core/base.html" %} {% load static %} {% block title%} SparkED
+{%endblock title %} {% block head %}
 <link rel="stylesheet" href="{% static 'css/review.css' %}" />
 <link rel="stylesheet" href="{% static 'css/main.css' %}" />
 <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
@@ -9,17 +8,24 @@
   <ul>
     <li>
       <img
-        width="10%"
+        width="5%"
         src="{% static 'images/favicon.png' %}"
         alt="logo-image"
       />
     </li>
+    {% if user.is_authenticated %}
+    <span class="navbar-text"
+      >Logged in as {{user.first_name}} {{user.last_name}}
+    </span>
     <li><a href="{% url 'student-portal' %}">Student Portal</a></li>
-    <li><a href="{% url 'sign-up' %}">Sign Up</a></li>
-    <li><a href="{% url 'login' %}">Sign in</a></li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
     <li>
       <a href="javascript:void(0);" onclick="scrollToContact()">Leave Review</a>
     </li>
+    {% else %}
+    <li><a href="{% url 'logout' %}">Login</a></li>
+    <li><a href="{% url 'sign-up' %}">Sign Up</a></li>
+    {% endif %}
   </ul>
 </nav>
 
