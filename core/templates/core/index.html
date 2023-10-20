@@ -75,11 +75,9 @@
   <h2>Leave a Review!</h2>
   <p>Please fill out the form below to leave a review for a tutor.</p>
   <form method="POST" action="#">
-    <label for="first_name">Tutor First Name:</label>
-    <input type="text" id="first_name" name="first_name" required /><br /><br />
-
-    <label for="last_name">Tutor Last Name:</label>
-    <input type="text" id="last_name" name="last_name" required /><br /><br />
+    {% csrf_token %}
+    <label for="username">Tutor Username:</label>
+    <input type="text" id="username" name="username" required /><br /><br />
 
     <label for="email">Tutor Email:</label>
     <input type="email" id="email" name="email" required /><br /><br />
